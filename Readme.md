@@ -1,27 +1,48 @@
-###About
-This project is a taxi system where drivers can take an order and customers can get to a 
-certain place. I used text files as a database. The user text file reflects the drivers 
-and passengers who use the application. This file permanently stores information, even when 
-the program is not running. The orders text file is a list of orders that appear while the 
-application is running. Each user must log into the application and as they work with this 
-application, authentication is checked so that there are no unauthorized logins. Passenger 
-and driver can get information about past orders. The address system is a two-dimensional 
-coordinate system (x, y). The addresses are represented by 2 coordinates that reflect the 
-point in the given coordinate system. The program uses a number randomizer to create unique 
-situations. For example, during the late afternoon, a passenger requests water and his 
-current position at a random moment in time.
+# Building and Running
 
-###Building
-- cmake minimum required (VERSION 3.17)
-- Version of compiler is C++20
 
-####Case 1:
+Run following command to build the project:
 
-You should run a command in console for creating .exe file
 ```
-cmake ./
+cmake --build --target HW4_NoskovNikita
 ```
 
-####Case 2:
+# Project structure
 
-You should open folder as a project in CLion and run program throw build-in compiler
+Project contains three main source files: `main.cpp, PassengerGateway.cpp, DriverGateway.cpp, MobileApp` and
+
+Other files are needed for subclasses.
+
+`Main.cpp` contains the test cases for the program, to demonstrate implemented methods
+
+`PassengerGateway.cpp` contains implementation of the methods responsible for passenger and gateway interaction.
+
+`DriverGateway.cpp` contains implementation of the methods responsible for driver and gateway interaction.
+
+`Mobile App` class is the part of the system which connects gateways to allow driver-passenger interaction.
+
+# Users
+
+Class `Passenger` has following fields:
+* **name** - Name of the Passenger, also temporary used as unique identifier.
+
+Class `Driver` has following fields:
+* **car** - this driver's car.
+* **name** - name of a driver.
+* **status** - current status (free or in a ride).
+
+###Car types:
+
+In ascending order:
+
+Ecomomy ---> Comfort ---> ComfortPlus ---> Business
+
+Type | Free Water | Park in front of intrance
+------------- | ------------- | --------------
+Ecomomy | - | -
+Comfort  | +| -
+ComfortPlus  | +|-
+Business | -|+
+
+### Usage
+Run the application and check console output, there is a demonstration of methods implemented in this version
