@@ -129,17 +129,125 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named PSS_II_Homework_03
+# Target rules for targets named PSS_HW4
 
 # Build rule for target.
-PSS_II_Homework_03: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PSS_II_Homework_03
-.PHONY : PSS_II_Homework_03
+PSS_HW4: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PSS_HW4
+.PHONY : PSS_HW4
 
 # fast build rule for target.
-PSS_II_Homework_03/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_II_Homework_03.dir\build.make CMakeFiles/PSS_II_Homework_03.dir/build
-.PHONY : PSS_II_Homework_03/fast
+PSS_HW4/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/build
+.PHONY : PSS_HW4/fast
+
+Car.obj: Car.cpp.obj
+
+.PHONY : Car.obj
+
+# target to build an object file
+Car.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/Car.cpp.obj
+.PHONY : Car.cpp.obj
+
+Car.i: Car.cpp.i
+
+.PHONY : Car.i
+
+# target to preprocess a source file
+Car.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/Car.cpp.i
+.PHONY : Car.cpp.i
+
+Car.s: Car.cpp.s
+
+.PHONY : Car.s
+
+# target to generate assembly for a file
+Car.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/Car.cpp.s
+.PHONY : Car.cpp.s
+
+DriverGateway.obj: DriverGateway.cpp.obj
+
+.PHONY : DriverGateway.obj
+
+# target to build an object file
+DriverGateway.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/DriverGateway.cpp.obj
+.PHONY : DriverGateway.cpp.obj
+
+DriverGateway.i: DriverGateway.cpp.i
+
+.PHONY : DriverGateway.i
+
+# target to preprocess a source file
+DriverGateway.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/DriverGateway.cpp.i
+.PHONY : DriverGateway.cpp.i
+
+DriverGateway.s: DriverGateway.cpp.s
+
+.PHONY : DriverGateway.s
+
+# target to generate assembly for a file
+DriverGateway.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/DriverGateway.cpp.s
+.PHONY : DriverGateway.cpp.s
+
+MobileApp.obj: MobileApp.cpp.obj
+
+.PHONY : MobileApp.obj
+
+# target to build an object file
+MobileApp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/MobileApp.cpp.obj
+.PHONY : MobileApp.cpp.obj
+
+MobileApp.i: MobileApp.cpp.i
+
+.PHONY : MobileApp.i
+
+# target to preprocess a source file
+MobileApp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/MobileApp.cpp.i
+.PHONY : MobileApp.cpp.i
+
+MobileApp.s: MobileApp.cpp.s
+
+.PHONY : MobileApp.s
+
+# target to generate assembly for a file
+MobileApp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/MobileApp.cpp.s
+.PHONY : MobileApp.cpp.s
+
+PassengerGateway.obj: PassengerGateway.cpp.obj
+
+.PHONY : PassengerGateway.obj
+
+# target to build an object file
+PassengerGateway.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/PassengerGateway.cpp.obj
+.PHONY : PassengerGateway.cpp.obj
+
+PassengerGateway.i: PassengerGateway.cpp.i
+
+.PHONY : PassengerGateway.i
+
+# target to preprocess a source file
+PassengerGateway.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/PassengerGateway.cpp.i
+.PHONY : PassengerGateway.cpp.i
+
+PassengerGateway.s: PassengerGateway.cpp.s
+
+.PHONY : PassengerGateway.s
+
+# target to generate assembly for a file
+PassengerGateway.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/PassengerGateway.cpp.s
+.PHONY : PassengerGateway.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -147,7 +255,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_II_Homework_03.dir\build.make CMakeFiles/PSS_II_Homework_03.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -156,7 +264,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_II_Homework_03.dir\build.make CMakeFiles/PSS_II_Homework_03.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -165,62 +273,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_II_Homework_03.dir\build.make CMakeFiles/PSS_II_Homework_03.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_HW4.dir\build.make CMakeFiles/PSS_HW4.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-room.obj: room.cpp.obj
-
-.PHONY : room.obj
-
-# target to build an object file
-room.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_II_Homework_03.dir\build.make CMakeFiles/PSS_II_Homework_03.dir/room.cpp.obj
-.PHONY : room.cpp.obj
-
-room.i: room.cpp.i
-
-.PHONY : room.i
-
-# target to preprocess a source file
-room.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_II_Homework_03.dir\build.make CMakeFiles/PSS_II_Homework_03.dir/room.cpp.i
-.PHONY : room.cpp.i
-
-room.s: room.cpp.s
-
-.PHONY : room.s
-
-# target to generate assembly for a file
-room.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_II_Homework_03.dir\build.make CMakeFiles/PSS_II_Homework_03.dir/room.cpp.s
-.PHONY : room.cpp.s
-
-users.obj: users.cpp.obj
-
-.PHONY : users.obj
-
-# target to build an object file
-users.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_II_Homework_03.dir\build.make CMakeFiles/PSS_II_Homework_03.dir/users.cpp.obj
-.PHONY : users.cpp.obj
-
-users.i: users.cpp.i
-
-.PHONY : users.i
-
-# target to preprocess a source file
-users.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_II_Homework_03.dir\build.make CMakeFiles/PSS_II_Homework_03.dir/users.cpp.i
-.PHONY : users.cpp.i
-
-users.s: users.cpp.s
-
-.PHONY : users.s
-
-# target to generate assembly for a file
-users.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PSS_II_Homework_03.dir\build.make CMakeFiles/PSS_II_Homework_03.dir/users.cpp.s
-.PHONY : users.cpp.s
 
 # Help Target
 help:
@@ -230,16 +284,22 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... PSS_II_Homework_03
+	@echo ... PSS_HW4
+	@echo ... Car.obj
+	@echo ... Car.i
+	@echo ... Car.s
+	@echo ... DriverGateway.obj
+	@echo ... DriverGateway.i
+	@echo ... DriverGateway.s
+	@echo ... MobileApp.obj
+	@echo ... MobileApp.i
+	@echo ... MobileApp.s
+	@echo ... PassengerGateway.obj
+	@echo ... PassengerGateway.i
+	@echo ... PassengerGateway.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... room.obj
-	@echo ... room.i
-	@echo ... room.s
-	@echo ... users.obj
-	@echo ... users.i
-	@echo ... users.s
 .PHONY : help
 
 

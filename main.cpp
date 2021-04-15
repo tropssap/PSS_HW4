@@ -1,100 +1,74 @@
 #include <iostream>
-#include <cstdlib>
-#include "room.h"
-#include "users.h"
+#include <ctime>
 
-bool emergencyMode=false;
+#include "PassengerGateway.h"
+#include "Passenger.h"
+#include "Car.h"
+#include "DriverGateway.h"
 
-void professorAskKeys(Professor &professorA, Professor &professorB) {
-    cout << professorA.getName() << " has forgot his keys in his cabinet. " << professorB.getName() << " was around and he knew that he can help out." << endl;
-    if (professorB.access(professorA.getCabinet())) {
-        cout << professorA.getName() << " is saved" << endl;
-    } else {
-        cout << "Oh no, colleague couldn't access the cabinet" << endl;
-    }
-}
+using namespace std;
 
-void tryAccessRoom(User &user, Room room){
-    if(user.access(room) || emergencyMode)
-        cout<<user.getName()<<" went in "<<room.getNumber()<<" room."<<endl;
-    else
-        cout<<user.getName()<<" tried but could not enter in "<<room.getNumber()<<" room."<<endl;
-    }
-
-void startEmergency(User &user){
-    cout<<user.getName()<<" turned on emergency. "<<endl;
-    emergencyMode= true;
-}
-void endEmergency(Admin &admin){
-    cout<<admin.getName()<<" turned off emergency."<<endl;
-    emergencyMode= false;
-}
-
+int getRandomNumber(int min, int max);
 
 int main() {
-    ClassRoom* classes[10];
-    for (int i = 0; i < 10; i++) {
-        classes[i] = new ClassRoom(i);
+    srand(time(0));
+    MobileApp mobileApp;
+    PassengerGateway passengerGateway(mobileApp);
+    DriverGateway driverGateway(mobileApp);
+    Passenger passenger_Daniil("Daniil");
+    ComfortCar comfortCar("comfortCar1", "numberPlate", Car::BLACK, "25/25");
+    Driver driver_Nurdaulet("Nurdaulet", comfortCar);
+
+    passengerGateway.login(passenger_Daniil);
+    driverGateway.login(driver_Nurdaulet);
+
+    cout << "The driver buys water for customers!" << endl;
+    comfortCar.BuyBottlesOfWater(10);
+
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Passenger wants to get order history!" << endl;
+    passengerGateway.showOrderHistory(passenger_Daniil);
+
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Driver wants to get order history!" << endl;
+    driverGateway.showOrderHistory(driver_Nurdaulet);
+
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Driver update status!" << endl;
+    driverGateway.updateStatus(driver_Nurdaulet, true);
+    cout << "Driver wants see car!" << endl;
+    driverGateway.showCarInfo(driver_Nurdaulet);
+
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Situation when there no orders" << endl;
+    driverGateway.showOrders(driver_Nurdaulet);
+
+    cout << "---------------------------------------------" << endl;
+
+    passengerGateway.orderTaxiRide(passenger_Daniil, "33/33", "100/100", passengerGateway.getOrderTime("33/33", "100/100"));
+    cout << "Driver watch the list of orders!" << endl;
+    driverGateway.showOrders(driver_Nurdaulet);
+
+    cout << "---------------------------------------------" << endl;
+
+    int orderId;
+    if (driverGateway.getOrderNumber() == 1) {
+        orderId = 0;
+    } else {
+        orderId = getRandomNumber(0 , driverGateway.getOrderNumber());
     }
 
+    if (orderId < 0) { orderId = 0; }
 
-    Director director = Director("Director", 0);
+    driverGateway.takeOrder(driver_Nurdaulet, passenger_Daniil, orderId);
 
+    cout << "---------------------------------------------" << endl;
 
-
-    Admin admin = Admin("Admin");
-    Admin admin1 = Admin("Admin B");
-
-    Professor professorFunny = Professor("The funniest professor", 11, "Funny joke");
-    Professor professorBoring = Professor("Unfunny professor", 12, "Unfunny joke");
-    Professor professor = Professor("Professor", 13, "Joke A");
-    Professor professor1 = Professor("Professor B", 14, "Joke B");
-
-    Cabinet CSLabCabinet = Cabinet(15);
-    LectureRoom PSSLecture = LectureRoom(108,1);
-    LectureRoom notPSSLecture = LectureRoom(208,2);
-    ConferenceRoom Confernece153 = ConferenceRoom (153,1);
-    ConferenceRoom Conference236 = ConferenceRoom(236,2);
-
-    LabEmployee* employees[8];
-    for (auto & employee : employees) {
-        employee = new LabEmployee("employee", CSLabCabinet);
-    }
-
-    Student* students[16];
-    for (auto & student : students) {
-        student = new Student("student", 1);
-    }
-    Guest* guests[24];
-    for (auto & guest : guests) {
-        guest = new Guest("guest");
-    }
-    professorAskKeys(professor, professor1);
-
-    professor1.addCustomAccess(admin, director.getCabinet());
-    tryAccessRoom(professor1,director.getCabinet());
-
-    professor1.cancelCustomAccess(admin1, director.getCabinet());
-    tryAccessRoom(professor1,director.getCabinet());
-
-    tryAccessRoom(*employees[3],professor1.getCabinet());
-
-    tryAccessRoom(*students[5],PSSLecture);
-
-    tryAccessRoom(*guests[7],PSSLecture);
-    tryAccessRoom(*guests[15],notPSSLecture);
-
-
-    tryAccessRoom(*guests[20], Conference236);
-    startEmergency(professorBoring);
-    tryAccessRoom(*guests[20], Conference236);
-    endEmergency(admin1);
-    tryAccessRoom(*guests[20], Conference236);
-
-
-    for (auto student : students) { free(student); }
-    for (auto guest : guests) { free(guest); }
-    for (auto clazz : classes) { free(clazz); }
-    for (auto emp : employees) { free(emp); }
+    return 0;
 }
 
+int getRandomNumber(int min, int max){ return min + rand() % (max-min); }
