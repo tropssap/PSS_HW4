@@ -34,4 +34,4 @@ public:
     void takeOrder(Driver driver, Passenger passenger, int orderId);
 };
 
-#endif //HOMEWORK4_DANIIL_OKRUG_DRIVERGATEWAY_H
+#endif

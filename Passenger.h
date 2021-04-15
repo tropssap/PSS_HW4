@@ -1,9 +1,7 @@
-//
-// Created by Angel on 09.04.2021.
-//
 
-#ifndef HOMEWORK4_DANIIL_OKRUG_PASSENGER_H
-#define HOMEWORK4_DANIIL_OKRUG_PASSENGER_H
+
+#ifndef PASSENGER_H
+#define PASSENGER_H
 #include <string>
 #include <utility>
 
@@ -18,4 +16,4 @@ private:
     string name;
 };
 
-#endif //HOMEWORK4_DANIIL_OKRUG_PASSENGER_H
+#endif

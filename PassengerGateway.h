@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //HOMEWORK4_DANIIL_OKRUG_PASSENGERGATEWAY_H
+#endif

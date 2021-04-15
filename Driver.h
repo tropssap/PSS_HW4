@@ -1,9 +1,7 @@
-//
-// Created by Angel on 10.04.2021.
-//
 
-#ifndef HOMEWORK4_DANIIL_OKRUG_DRIVER_H
-#define HOMEWORK4_DANIIL_OKRUG_DRIVER_H
+
+#ifndef DRIVER_H
+#define DRIVER_H
 
 #include <string>
 #include <utility>
@@ -31,4 +29,4 @@ private:
 };
 
 
-#endif //HOMEWORK4_DANIIL_OKRUG_DRIVER_H
+#endif
